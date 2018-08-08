@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="author" content="Marcelo" />
+  <meta name="description" content="NYSL" />
+  <title>NYSL Northside Youth Soccer League</title>
+  <link rel="shortcut icon" sizes="196x196" href="css/images/nysl_logo.png">
+  <link href="css/estiloflex.css" rel="stylesheet" type="text/css" />
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="cont">
+  <div id="mainnav" class="mainnav">
+    <div class="navb">
+      <a href="index.html" class="glyphicon glyphicon-home"></a>
+      <!--<a href="#" class="glyphicon glyphicon-user" onclick="startChat()"></a>-->
+    </div>
+    <div class="titulo">
+      <!--<img class="logo" src="css/images/nysl_logo.png">-->
+      <h1>NYSL Game Information</h1>
+      <img class="logo" src="css/images/nysl_logo.png">
+    </div>
+  </div>
+
+  <div id="app" class="maincontender">
+
+    <div id="home" class="bodycontent homeMain">
+      <div class="teams" v-for="item in teamsLiga" v-on:click="teamsGame(item.code,item.name)">
+        <img class="escudos" v-bind:src="item.key">
+        <h4>{{item.name}}</h4>
+      </div>
+    </div>
+
+    <div id="homeChat" class="homeChat">
+
+     <!-- <div id="mainPageLogin" class="mainPageLogin">
+        <img src="css/images/soccer.png" width="99%">
+        <h3>Sign in with Google</h3>
+      </div>-->
+
+      <div id="chat" class="chat">
+        <div class="inputText">
+          <input id="textInput" class="input" type="text" placeholder="Your message...">
+          <button id="create-post" class="createPost">Send</button>
+        </div>
+        <div id="posts" class="posts"></div>
+      </div>
+    </div>
+
+    <div id="schedule" class="bodycontent schedule">
+      <div class="schedules" v-for="item in ligaFixture" v-on:click="gameLocation(item.date)">
+        <div><img class="escudo" v-bind:src="item.team1.key">
+          <h5>{{item.team1.name}}</h5>
+        </div>
+        <div class="scoredata">
+          <h5>{{item.date}}</h5>
+          <h4>{{item.score1}} - {{item.score2}}</h4>
+        </div>
+        <div><img class="escudo" v-bind:src="item.team2.key">
+          <h5>{{item.team2.name}}</h5>
+        </div>
+      </div>
+    </div>
+
+    <div id="detailsmatch" class="bodycontent detailsmatch">
+      <div class="detailLandScape" v-for="item in gameLocat">
+
+        <div class="backgroundImage">
+
+          <div>
+            <h2>Stadium</h2>
+            <h4>{{item.team1.name}}</h4>
+          </div>
+          <div class="detailMatch">
+            <div v-on:click="playersTeam(item.team1.code)"><img class="escudo" v-bind:src="item.team1.key">
+              <h5>{{item.team1.name}}</h5>
+            </div>
+            <div>
+              <h4>{{item.score1}} - {{item.score2}}</h4>
+            </div>
+            <div v-on:click="playersTeam(item.team2.code)">
+              <img class="escudo" v-bind:src="item.team2.key">
+              <h5>{{item.team2.name}}</h5>
+            </div>
+          </div>
+          <div>
+            <p class="glyphicon glyphicon-chevron-left" v-on:click="teamsGame(item.code)"></p>
+            <img v-on:click="ubicMaps" id="ubicGoogle" src="css/images/ubic.png" width=10%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="stadiumLoc" class="bodycontent maps" v-for="item in gameLocat">
+      <h5>{{item.team1.address}}</h5>
+      <iframe v-bind:src="item.team1.location" target="_blank"></iframe>
+    </div>
+    <div id="playerTeam" class="bodycontent playerTeam">
+      <div v-for="item in playersList[0]">
+        <h6>{{item.playerName}} {{item.position}}</h6>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+
+    <a href="index.html" class="glyphicon glyphicon-home"></a>
+    <a href="#" class="glyphicon glyphicon-user" onclick="startChat()"></a>
+    <a href="#" id="login" class="glyphicon glyphicon-log-in"></a>
+    <a href="#" id="singOut" class="glyphicon glyphicon-log-out"></a>
+
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/5.0.1/firebase.js">
+  </script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCVHdXoROzyIJMk1-jfneEZMiJm7eP24cA",
+      authDomain: "nysl-c6c54.firebaseapp.com",
+      databaseURL: "https://nysl-c6c54.firebaseio.com",
+      projectId: "nysl-c6c54",
+      storageBucket: "nysl-c6c54.appspot.com",
+      messagingSenderId: "1051588248587"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!--<script src="players.js"></script>-->
+  <script src="atLigaTeam.js"></script>
+  <!--<script src="atFixture.js"></script>-->
+  <script src="nysl.js"></script>
+</body>
+
+</html>

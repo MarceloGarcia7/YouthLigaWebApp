@@ -1,0 +1,465 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/*--- SIDE NAVOGATION --------*/
+
+/* Style the links inside the sidenav 
+
+#mySidenav a {
+
+  position: absolute;
+   Position them relative to the browser window 
+  top: -10px;
+   Position them outside of the screen 
+  transition: 0.4s;
+   Add transition on hover 
+  padding: 15px;
+   15px padding 
+  width: 90px;
+   Set a specific width 
+  text-decoration: none;
+   Remove underline 
+  font-size: 15px;
+   Increase font size 
+  color: burlywood;
+   White text color 
+  border-radius: 0 8px 8px 0;
+   Rounded corners on the top right and bottom right side
+}*/
+
+/*
+#mySidenav :hover {
+  top: 100px;
+   On mouse-over, make the elements appear as they should 
+}
+#about {
+  top: 60px;
+  background-color: rgba(1, 2, 1, 0.98);
+}
+#projects {
+  top: 100px;
+  background-color: rgba(1, 2, 1, 0.98);
+   Red 
+}
+#contact {
+  top: 140px;
+  background-color: rgba(1, 2, 1, 0.98) Light Black 
+}
+*/
+
+/*--- NAV TOP --------*/
+
+.mainnav {
+  overflow: hidden;
+  position: fixed;
+  /*Set the navbar to fixed position */
+  top: 0;
+  /*Position the navbar at the top of the page*/
+  width: 100%;
+  /*border: 10px solid black;*/
+  background-color: rgba(1, 2, 1, 0.98);
+  color: burlywood;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+}
+
+.navb {
+  width: 22%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.navb a {
+  color: white;
+  font-size: 2em;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.footer {
+  overflow: hidden;
+  position: fixed;
+  /*Set the navbar to fixed */
+  bottom: 0;
+  /*Position the navbar at the top of the page */
+  width: 100%;
+  /*Full width */
+  /*border: 10px solid black;*/
+  background-color: rgba(1, 2, 1, 0.98);
+  height: 6%;
+  color: burlywood;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  /* border: 10px solid yellow;*/
+}
+
+.footer a {
+  display: flex;
+  justify-content: space-around;
+  color: white;
+  font-size: 1.5em;
+}
+
+/* -----  PORTRAIT - LANDSCAPE-----*/
+
+@media only screen and (orientation: portrait) {
+  .cont {
+    /*background-color: rgba(3, 38, 15, 0.98);*/
+    background-color: black;
+  }
+  .mainnav {
+    height: 11%;
+  }
+  .logo {
+    width: 16%;
+  }
+  .titulo h1 {
+    font-size: 1.6em;
+  }
+  .bodycontent {
+    margin-top: 75px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    color: burlywood;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+  }
+  .bodycontent > div {
+    /* background-image: url(images/soccer-field-46070-2880x1800.jpg);*/
+    background: linear-gradient(rgba(7, 23, 74, 0.39), rgba(47, 97, 136, 0.73));
+    /* background-color: rgba(3, 38, 15, 0.98);*/
+    margin: 3px;
+    text-align: center;
+  }
+
+  .schedule, .detailsmatch{
+    display: none;
+  }
+
+  .teams,
+  .schedules,
+  .detailLandScape,
+  .detailPortrait {
+    border: 5px solid black;
+    border-radius: 16px;
+  }
+  .schedules {
+    display: flex;
+    align-items: center;
+  }
+  .schedules > div {
+    width: 35%;
+  }
+  .detailMatch {
+    display: flex;
+    align-items: center;
+  }
+  .detailMatch > div {
+    width: 35%;
+  }
+  
+  .detailLandscape > h2 {
+    margin-top: 0;
+  }
+  .glyphicon {
+    float: left;
+  }
+
+  .teams {
+    width: 45%;
+  }
+  .escudo {
+    width: 45%;
+  }
+  .escudos {
+    width: 40%;
+  }
+
+}
+
+
+@media only screen and (orientation: landscape) {
+  .cont {
+    background-color: black;
+  }
+  .logo {
+    width: 12%;
+  }
+  .bodycontent {
+    margin-top: 65px;
+    margin-bottom: 25px;
+  /*  border: 1px solid yellow;
+    font-size: 40px;*/
+    color: burlywood;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .schedule, .detailsmatch{
+    display: none;
+  }
+
+  .teams,
+  .schedules {
+    background: linear-gradient(rgba(7, 23, 74, 0.39), rgba(47, 97, 136, 0.73));
+    margin: 3px;
+    text-align: center;
+  }
+
+  
+ /* .maincontender{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }*/
+  
+  .detailLandScape {
+    width: 98%;
+    background-image: url(images/cKmjwnG.jpg);
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+   
+  }
+
+
+  .teams,
+  .schedules {
+    border: 3px solid black/*rgba(222, 184, 135, 0.37)*/
+    ;
+    border-radius: 10px;
+  }
+
+  .schedules {
+    width: 99%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .schedules > div {
+    width: 35%;
+  }
+
+  .detailMatch {
+    color: black;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+  }
+  .detailMatch > div {
+    width: 35%;
+  }
+  .detailLandscape > h2 {
+    margin-top: 0;
+  }
+  .glyphicon {
+    float: left;
+  }
+  
+  .teams {
+    width: 17%;
+   
+  }
+  .escudos {
+    width: 65%;
+  }
+  .escudo {
+    width: 20%;
+  }
+
+}
+
+.playerTeam{
+  display: none;
+  border-radius: 10px;
+  margin: 0px 0px 20px 0px;
+  height: 260px;
+  background-image: url(/css/images/.picasaoriginals/design1_image1.jpg);
+  background-size: cover;
+  border: 5px solid black;
+  /*display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  */
+  justify-content: center;
+}
+@keyframes slidein {
+  from {
+    margin-left: 80%;
+    width: 60%
+  }
+
+  to {
+    margin-left: 0%;
+    width: 30%
+  }
+}
+
+.playerTeam > div{
+  animation-duration: 1s;
+  animation-name: slidein;
+  background: linear-gradient(rgba(151, 227, 218, 0.16), rgba(107, 229, 145, 0.75));
+  color: black;
+  width: 30%;
+  margin: 5px;
+  border-radius: 65px;
+  display: flex;
+  justify-content: center;
+  align-items:flex-end;
+}
+
+/* -----  PORTRAIT - LANDSCAPE-----*/
+
+.maps {
+  background: linear-gradient(rgba(151, 227, 218, 0.16), rgba(107, 229, 145, 0.75));
+  display: none;
+  height: 260px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+  border: 5px solid black;
+  border-radius: 10px; 
+}
+
+
+/*-------- CHAT ------------*/
+
+
+.homeChat{
+  display: none;
+}
+.chat {
+  display: none;
+  color: black;
+  width: 100%;
+  background-color: rgb(230, 223, 168);
+  
+}
+
+/*.mainPageLogin {
+  
+  color: burlywood;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  border: 5px solid black;
+}*/
+
+/*---------- DENTRO DEL CHAT------*/
+
+/*.mainChat {
+  border: 5px solid red;
+  border-radius: 50px;
+  flex-direction: column-reverse;
+}*/
+
+.inputText {
+  overflow-y: auto;
+  position: fixed;
+  /*Set the inputText to fixed */
+  bottom: 35px;
+  width: 100%;
+  background-color: rgb(185, 174, 88);
+  padding: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.posts{
+  overflow-y:auto;
+  height: 580px;
+  width: 100%;
+  margin-bottom: 85px;
+}
+
+.input {
+  padding-left: 10px;
+  font-size: 25px;
+  width: 78%;
+  background-color: white;
+  border-radius: 15px;
+ /* word-wrap: break-word;
+  white-space: normal;*/
+}
+.createPost {
+  background-color: white;
+  width: 20%;
+  border-radius: 25px;
+}
+
+.theyChat {
+  border: 3px solid rgba(193, 183, 173, 0.48);
+  background-color: #ECE5DD; /* rgb(208, 222, 177);*/
+  border-radius: 0px 15px 15px 15px;
+  margin: 3px;
+  width: 85%;
+  float: left;
+}
+
+.theyChat h4 {
+  font-size: 17px;
+  padding: 3px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.theyChat h6 {
+  text-align: right;
+  padding: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.theyChat h5 {
+  color: rgba(105, 105, 105, 0.51);
+  padding: 3px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.meChat {
+  border: 3px solid rgba(103, 126, 86, 0.25);
+  background-color: #dcf8c6;
+  border-radius: 15px 0px 15px 15px;
+  margin: 3px;
+  width: 85%;
+  float: right;
+}
+
+.meChat h4 {
+  font-size: 17px;
+  padding: 3px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.meChat h6 {
+  text-align: right;
+  padding: 3px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.meChat h5 {
+  color: #075e54;
+  text-align: right;
+  padding: 2px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
